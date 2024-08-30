@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container{
+    /* max-width: 1300px; */
+    max-width: 100%;
+    position: sticky;
+    top: 0px;
+    background: #dec9a6;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#logo{
+    display: flex;
+    color: black;
+    /* align-items: center;
+    margin: 0px 14px; */
+    font-size: 25px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+#logo img{
+    width: 100px;
+}
+#logo a{
+    color: #655316;
+    font-family: none;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+#navbar{
+    flex: 1;
+    text-align: center;
+    
+}
+
+#navbar ul{
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+#navbar ul li{
+    list-style: none;
+}
+
+#navbar li a{
+    color: black;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 7px 3px;
+    margin: 15px;
+}
+
+#navbar li a:hover{
+    color: gray;
+    
+}
+
+
+
+.registerform{
+    /* background: radial-gradient(red,blue); */
+    background: radial-gradient(#c0a67f,#e1e1e1);
+}
+
+.container-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+}
+
+.col-2{
+    margin: auto;
+    /* justify-content: center; */
+}
+
+#indicator{
+    width: 100px;
+    border: none;
+    background: green;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(0px);
+    transition: transform 1s;
+}
+
+
+.form-container{
+    background: white;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.form-container a{
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.form-btn{
+    display: inline-block ;
+}
+
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid #ccc;
+}
+form .logbtn{
+
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    
+    /* display: inline-block;
+    /* font-size: x-large; */
+    background: green;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 20px;
+    text-decoration: none; 
+}
+
+/* form .logbtn{
+    outline: none;
+} */
+
+#loginform{
+    left: 0px;
+}
+
+#registerform{
+    left: 300px;
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
+.logbtn:hover{
+    background-color: rgb(26, 165, 26);
+}
+
+form a{
+    /* display: inherit; */
+    text-decoration: none;
+    font-size: 16px;
+}
+
+footer{
+    color: #553417;
+    background-color: #dec9a6;
+
+}
+
+#container-f{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
+
+#row1-f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#col1-f{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+    text-align: justify;
+}
+#col2-f{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+    justify-content: center;
+}
+#col3-f{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    align-items: center;
+}
+
+#row2-f{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+

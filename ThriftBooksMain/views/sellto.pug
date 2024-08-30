@@ -1,0 +1,46 @@
+doctype html
+html
+  head
+    title Thrift Books
+    style
+      include ../static/addbook.css
+  body
+    //- header
+    div.container
+        div.navbar
+            div#logo
+                img(src="/static/img/logo.jpg", alt="")
+                a(href="/") Thrift Books
+
+            nav#navbar
+                ul   
+                    li #[a(href="/books") Books] 
+                    li #[a(href="/myStore") My Store]
+                    li #[a(href="/myCart") My Cart]
+                    li #[a(href="/wishlist") Wishlist]
+
+
+                
+    
+
+    div.registerform 
+        div.container-2 
+            div.row 
+                
+                div.col-2 
+                    div.form-container 
+                        form(id="sellto"  action="/sellto" method="POST")
+                            //- input(class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/*" name="bimg")
+                            input(type="text" id="bookid" value= book._id name="bookid" readonly)
+                            input(type="text" id="bookname" value= book.book name="bookname" readonly)
+                            input(type="text" id="author" value= book.author name="author" readonly)
+                            input(type="text" id="genre" value= book.genre name="genre" readonly)
+                            input(type="text" placeholder="Buyer's Username" value="" name="buyer")
+                            input(type="text" placeholder="Price" value="" name="price")
+                            
+                            
+                            button(type="submit" class="logbtn") Confirm
+                            
+
+
+                            

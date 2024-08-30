@@ -1,0 +1,162 @@
+doctype html
+html
+  head
+    title Thrift Books
+    style
+      include ../static/stylemystore.css
+  body
+    //- header
+    div.container
+        div.navbar
+            div#logo
+                img(src="/static/img/logo.jpg", alt="")
+                a(href="/") Thrift Books
+
+            nav#navbar
+                ul 
+                    li #[a(href="/books") Books] 
+                    li #[a(href="/myStore") My Store]
+                    li #[a(href="/myCart") My Cart]
+                    li #[a(href="/wishlist") Wishlist]
+                    //- li #[a(href="/logout") Logout]
+            a(href="/logout", class="btnredlog",id="logoutbtn") Logout
+
+                
+    //- hr
+    div#bgacc
+            section#accinfo 
+                | Account Information
+                br
+                br
+                p ✩ Username : #{info.username}
+                p ✩ Email : #{info.email}
+                p ✩ Phone Number : #{info.phone}
+        
+        
+
+    //- hr
+
+    section#upldbks
+        div#mystore
+            h2 Wishlist (⁠*⁠˘⁠︶⁠˘⁠*⁠)⁠.⁠｡⁠*⁠♡
+            //- a(href="/") Add all to cart
+        div#mybooks 
+                div.row-rec
+                    each book in books
+                        div.col-rec
+                            a(id=book.book_id onclick='myJavaScriptFunction(id);')
+                                img(src=`${book.bimg}`)
+                                p #{book.book}
+                                p Rs. #{book.price}
+                            a(class="wishbtn" id=book.book_id href="#" onclick='addToCartFunction(id)') Add to Cart
+                            a(class="deletebtn" id=book.book_id href="#" onclick='deleteFunction(id);') Delete
+                
+
+    footer#footer
+        div#container-f
+            div#row1-f 
+                div#col1-f 
+                    h2 About Us 
+                    p Want to read more and more books but find it expensive? Well, we're here for your rescue! Thrift Books and feed the bookworm in you. You can also sell your used books here and help other readers like you. Thrifting books is good for you and the environment and that's all we want. Happy Books to you.
+
+                div#col2-f 
+                    h3 Follow Us 
+                    h4 Instagram 
+                    h4 Twitter
+                    h4 Facebook 
+                
+                div#col3-f 
+                    h3 Contact Us 
+                    h4 Thrift-Books.com 
+                    h4 #1218,
+                    h4 Sector-15, Chandigarh,
+                    h4 Punjab -131001
+                    h4 P:+91-9050111218
+                    h4 E-mail:contact@gmail.com
+
+            div#row2-f 
+                div#cprt
+                    |   Copyright Ⓒ 2024 Thrift-Books.com | All rights reserved
+    
+    script. 
+
+        function myJavaScriptFunction(bookid){
+            console.log(bookid);
+            var booklink = document.getElementById(bookid);
+            booklink.href = "/eachbook?id="+ bookid;
+            console.log(booklink.href);
+        }
+
+        function addToCartFunction(bookid)
+        {
+            console.log(bookid);
+            
+            // Create a form element
+            var form = document.createElement('form');
+            form.setAttribute('id', 'addToCartForm');
+            form.setAttribute('action', '/wishlist');
+            form.setAttribute('method', 'POST');
+
+            // Create the first input element for BookId
+            var inputBookId = document.createElement('input');
+            inputBookId.setAttribute('type', 'text');
+            inputBookId.setAttribute('placeholder', 'BookId');
+            inputBookId.setAttribute('value', bookid);
+            inputBookId.setAttribute('name', 'BookId');
+
+            // Append the first input to the form
+            form.appendChild(inputBookId);
+
+            // Create the second input element for Action
+            var inputAction = document.createElement('input');
+            inputAction.setAttribute('type', 'text');
+            inputAction.setAttribute('placeholder', 'Action');
+            inputAction.setAttribute('value', 'addtocart')
+            inputAction.setAttribute('name', 'Action');
+
+            // Append the second input to the form
+            form.appendChild(inputAction);
+
+            // Append the form to the body (or any other appropriate element)
+            document.body.appendChild(form);
+
+            // Submit the form
+            document.getElementById('addToCartForm').submit();
+        } 
+
+        function deleteFunction(bookid)
+        {
+            console.log(bookid);
+            // Create a form element
+            var form = document.createElement('form');
+            form.setAttribute('id', 'deleteForm');
+            form.setAttribute('action', '/wishlist');
+            form.setAttribute('method', 'POST');
+
+            // Create the first input element for BookId
+            var inputBookId = document.createElement('input');
+            inputBookId.setAttribute('type', 'text');
+            inputBookId.setAttribute('placeholder', 'BookId');
+            inputBookId.setAttribute('value', bookid);
+            inputBookId.setAttribute('name', 'BookId');
+
+            // Append the first input to the form
+            form.appendChild(inputBookId);
+
+            // Create the second input element for Action
+            var inputAction = document.createElement('input');
+            inputAction.setAttribute('type', 'text');
+            inputAction.setAttribute('placeholder', 'Action');
+            inputAction.setAttribute('value', 'delete')
+            inputAction.setAttribute('name', 'Action');
+
+            // Append the second input to the form
+            form.appendChild(inputAction);
+
+            // Append the form to the body (or any other appropriate element)
+            document.body.appendChild(form);
+
+            // Submit the form
+            document.getElementById('deleteForm').submit();
+        }        
+

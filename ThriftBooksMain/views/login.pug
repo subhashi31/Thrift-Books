@@ -1,0 +1,83 @@
+//- login.pug
+doctype html
+html
+  head
+    title Thrift Books
+    style
+      include ../static/stylelogin.css
+  body
+    //- header
+    div.container
+        div.navbar
+            div#logo
+                img(src="/static/img/logo.jpg", alt="")
+                a(href="/") Thrift Books
+
+            nav#navbar
+                ul  
+                    li #[a(href="/books") Books] 
+                    li #[a(href="/myStore") My Store]
+                    li #[a(href="/myCart") My Cart]
+                    li #[a(href="/wishlist") Wishlist]
+                    
+  
+
+    div.registerform 
+        div.container-2 
+            div.row 
+                div.col-2 
+                    img(src="/static/img/registerpic.jpg", alt="")
+                
+                div.col-2 
+                    div.form-container 
+                        div.form-btn 
+                            a(href="/login") Login 
+                            a(href="/register") Register
+                            hr(id="indicator")
+
+                        form(id="loginform"  action="/login" method="POST")
+                            input(type="text" placeholder="Username" value="" name="username")
+                            input(type="password" placeholder="Password" value="" name="password")
+                            button(type="submit" class="logbtn") Login
+                            a(href="/") Forgot Password!
+
+
+    footer#footer
+        div#container-f
+            div#row1-f 
+                div#col1-f 
+                    h2 About Us 
+                    p Want to read more and more books but find it expensive? Well, we're here for your rescue! Thrift Books and feed the bookworm in you. You can also sell your used books here and help other readers like you. Thrifting books is good for you and the environment and that's all we want. Happy Books to you.
+
+                div#col2-f 
+                    h3 Follow Us 
+                    h4 Instagram 
+                    h4 Twitter
+                    h4 Facebook 
+                
+                div#col3-f 
+                    h3 Contact Us 
+                    h4 Thrift-Books.com 
+                    h4 #1218,
+                    h4 Sector-15, Chandigarh,
+                    h4 Punjab -131001
+                    h4 P:+91-9050111218
+                    h4 E-mail:contact@gmail.com
+
+            div#row2-f 
+                div#cprt
+                    |   Copyright Ⓒ 2024 Thrift-Books.com | All rights reserved
+    
+    script.
+      
+      var indicator = document.getElementById("indicator");
+
+            function register(){
+                indicator.style.transform = "translateX(100px)";
+                
+
+            }
+
+            function login(){
+                indicator.style.transform = "translateX(0px)";
+            }

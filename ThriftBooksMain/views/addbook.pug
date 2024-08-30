@@ -1,0 +1,55 @@
+doctype html
+html
+  head
+    title Thrift Books
+    style
+      include ../static/addbook.css
+  body
+    //- header
+    div.container
+        div.navbar
+            div#logo
+                img(src="/static/img/logo.jpg", alt="")
+                a(href="/") Thrift Books
+
+            nav#navbar
+                ul   
+                    li #[a(href="/books") Books] 
+                    li #[a(href="/myStore") My Store]
+                    li #[a(href="/myCart") My Cart]
+                    li #[a(href="/wishlist") Wishlist]
+
+
+    div.registerform 
+        div.container-2 
+            div.row 
+                
+                div.col-2 
+                    div.form-container 
+                        form(id="addbook"  action="/addbook" method="POST")
+                            input(class="file-upload-input" type="file" onchange="readURL(this)" accept="Image/*" name="bimg")
+                            input(type="text" placeholder="Book" value="" name="book")
+                            input(type="text" placeholder="Author" value="" name="author")
+                            input(type="text" placeholder="Genre" value="" name="genre")
+                            input(type="text" placeholder="Price" value="" name="price")
+                            
+                            div#condition
+                                div#condi
+                                    | Condition 
+                                div#conditionRating
+                                    input(type="radio" value="5★" name="condition")#5
+                                    label(for="5") 5★
+                                    input(type="radio" value="4★" name="condition")#4
+                                    label(for="4") 4★
+                                    input(type="radio" value="3★" name="condition")#3
+                                    label(for="3") 3★
+                                    input(type="radio" value="2★" name="condition")#2
+                                    label(for="2") 2★
+                                    input(type="radio" value="1★" name="condition")#1
+                                    label(for="1") 1★
+                            
+                            button(type="submit" class="logbtn") Upload
+                            
+
+
+                            
