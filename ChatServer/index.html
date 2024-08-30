@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thrift Books</title>
+    <!-- this script connects server & client ref-> socket.io documentation -->
+    <script defer src="http://localhost:3200/socket.io/socket.io.js"></script>
+    <script defer src="js/client.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <img class="icon" src="logo.jpg" alt="CHAT">
+        <h1>Thrift Books</h1>
+    </nav>
+    <div id="box">
+        <div class="container" id="scrollable-container">
+            <!-- 
+            messages container
+            <div class="message left">Jessi: Hi!</div>
+            <div class="message right">James: Hello!</div>
+             -->
+        </div>
+
+        <div class="send">
+            <form action="#" id="send-container">
+                <input type="text" name="messageInp" id="messageInp">
+                <button class="btn" type="submit"></button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

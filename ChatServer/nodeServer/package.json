@@ -1,0 +1,16 @@
+{
+  "name": "nodeserver",
+  "version": "1.0.0",
+  "description": "this is node server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Subhashi",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4",
+    "socket.io": "^4.7.5"
+  }
+}
